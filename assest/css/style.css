@@ -1,0 +1,499 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header{
+  width: 100%;
+  height: 8vh;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.nav{
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  align-items: center;
+  font-family: monospace;
+}
+
+.nav-left{
+  width: auto;
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 2em;
+  margin-left: 1em;
+  color: black;
+}
+
+.nav-right{
+  width: 15%;
+  text-align: center;
+  font-size: 1.8em;
+  text-transform: capitalize;
+  text-decoration: none;
+  position: relative;
+  left: 42%;
+  color: black;
+}
+
+.nav-left:hover, .nav-right:hover{
+  background-color: rgb(199, 199, 199);
+}
+
+                                                 /* responsive nav-bar */
+
+@media only screen and (max-width: 700px){
+
+  .nav-left{
+    font-size: 0.9em;
+  }
+  .nav-right{
+    font-size: 1em;
+    position: relative;
+    left: 28%;
+  }
+}
+
+@media only screen and (min-width: 701px), (max-width: 1300){
+  .nav-right{
+    font-size: 1.5em;
+    position: relative;
+    left: 25%;
+
+  }
+}
+
+
+                                           /* main part */
+
+.main{
+  background-image: url(/assest/images/main.png);
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.heading{
+  font-size: 3.5em;
+  font-family: sans-serif;
+  color: rgb(216, 216, 216);
+}
+
+.bold{
+  text-transform: uppercase;
+  background-color: rgb(73, 73, 73);
+  padding: 0.3em;
+  margin: 0.5em;
+}
+
+.quotation{
+  margin-top: 2em;
+  width: 50%;
+  font-size: 1.7em;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+                                                   /* Responsive Main Section */
+
+@media only screen and (max-width: 450px){
+  .heading{
+    font-size: 2em;
+  }
+
+  .quotation{
+    font-size: 1em;
+  }
+}
+                                              /* about part */
+
+#about{
+  width: 100%;
+  height: auto;
+  padding: 2em;
+}
+
+.heading-1{
+  text-transform: uppercase;
+  font-size: 4em;
+  border-bottom: 0.04em solid black;
+  margin-left: 0.3em;
+  margin-right: 0.5em;
+}
+
+.paragraph{
+  margin: 1.5em;
+  font-size: 1.2em;
+}
+
+.about-part{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  background-color: antiquewhite;
+  /* position: relative; */
+}
+
+.part-1{
+  flex: 0 0 30em;
+  margin: 1em;
+  padding: 1em;
+  /* width: 32%;
+  height: 70vh; */
+  border: 0.1em solid black;
+  text-align: center;
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.part-1.animate{
+  opacity: 1;
+  transform: translateX(-100%);
+}
+
+.part-1:nth-child(1) {
+  animation: animate-part-1 1s ease-in-out 0.5s forwards;
+}
+
+.part-1:nth-child(2) {
+  animation: animate-part-1 1s ease-in-out 1.5s forwards;
+}
+  
+.part-1:nth-child(3) {
+  animation: animate-part-1 1s ease-in-out 2.5s forwards;
+}
+
+@keyframes animate-part-1{
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.part-heading{
+  font-size: 1.9em;
+  margin-top: 0.5em;
+}
+
+.first-architect-about{
+  margin-top: 1.2em;
+  padding: 0.8em;
+}
+
+.learn-more{
+  background-color: #4CAF50;
+  color: #ffffff;
+  padding: 0.6em 1em;
+  border: none;
+  border-radius: 0.4em;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: capitalize;
+  font-size: 1em;
+}
+
+.learn-more:hover{
+  font-size: 1.2em;
+}
+
+.img-2{
+  width: 45%;
+  height: 15em;
+  object-fit: cover;
+  margin: 1em;
+}
+
+.architect-1-heading{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 3em;
+  animation: shrink 0.5s forwards; 
+  margin: 1.5em 0 1.5em 0;
+  font-style: italic;
+  color: blue;
+  transition: font-size 5s;
+  text-decoration: underline;
+}
+
+@keyframes shrink {
+  100% {
+    font-size: 2em; 
+  }
+}
+
+.architect-1-paragraph{
+  margin: 1.3em;
+  font-size: large;
+}
+
+.architect-1-small-heading{
+  margin: 1em;
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: capitalize;
+  border-bottom: 0.01em solid gray;
+}
+
+.architect-1-x-small-heading{
+  font-size: 1.5em;
+  margin: 1.1em;
+  font-weight: bold;
+}
+
+.architect-1-projects{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.architect-1-img{
+  margin: 1em 0 0 0.9em;
+  transition: transform 0.5s;
+  cursor: pointer;
+  width: 30%;
+}
+
+.architect-1-img:hover{
+  transform: scale(1.2);
+  position: relative;
+}
+
+                                                       /* responsive architect-1-images */
+
+@media only screen and (max-width: 768px) {
+  .architect-1-img {
+    width: 45%; 
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .architect-1-img {
+    width: 100%; 
+  }
+}
+
+.back-button{
+  background-color: blanchedalmond;
+  text-align: center;
+  margin-top: 2em;
+  padding: 1em;
+}
+
+                                           /* Media queries for responsiveness about section*/
+
+@media only screen and (max-width: 768px) {
+  .about-part {
+    flex-direction: column;
+  }
+  .part-1 {
+    flex: 0 0 100%;
+    margin: 1em 0;
+  }
+  .img-2 {
+    height: 10em;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .about-part {
+    gap: 1em;
+  }
+  .part-1 {
+    padding: 0.5em;
+  }
+  .img-2 {
+    height: 8em;
+  }
+}
+
+                                       /* project part */
+
+#project{
+    width: 100%;
+    height: auto;
+    padding: 1em;   
+}
+
+.project-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax( 20em, 1fr));
+    gap: 1em;
+}
+
+.project-image{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.figcaption{
+    font-size: 1.5em;
+    background-color: black;
+    color: white;
+    width: 40%;
+    text-align: center;
+    text-transform: capitalize;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+                                                  /* contact part */
+
+#contact{
+    width: 100%;
+    height: auto;
+    background-color: #4CAF50;
+    padding: 1em;
+}
+
+.heading-2{
+    font-size: 3.5em;
+    text-transform: uppercase;
+    border-bottom: 0.01em solid black;
+    margin: 0 0.5em 0.5em 0.5em;
+    font-family: cursive;
+}
+
+.paragraph-1{
+    font-size: 1.5em;
+    margin-left: 1em;
+    text-transform: capitalize;
+}
+
+.field{
+    display: block;
+    margin: 1.5em;
+    width: 97%;
+    height: 5vh;
+    padding: 1em;
+    font-size: 1em;
+    text-transform: capitalize;
+    border: 0.2em dashed white;
+}
+
+.submit{
+    margin-left: 1.5em;
+    background-color: black;
+    color: white;
+    padding: 1em;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-family: cursive;
+}
+
+.thank-you {
+    width: 100%;
+    height: 100vh;
+    background-image: url("/assest/images/thank-you-background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+  
+.thanks-heading {
+    font-size: 4em;
+    font-weight: bold;
+    margin-bottom: 0.8em;
+    transform: scale(0.5); 
+    animation: scale-up 2s forwards;
+}
+
+@keyframes scale-up {
+    to{
+        transform: scale(1.3);
+    }
+}
+  
+.thanks-paragraph {
+    font-size: 1.8em;
+    margin-bottom: 4em;
+}
+
+                                                 /* responsive thank you page */
+
+@media only screen and (max-width: 700px){
+  .thanks-heading{
+    font-size: 1em;
+    text-align: center;
+  }
+  .thanks-paragraph{
+    text-align: center;
+    font-size: 1em;
+  }
+}
+
+@media only screen and (min-width: 701px), (max-width:1300px){
+  .thanks-heading{
+    font-size: 2.8em;
+    text-align: center;
+  }
+  .thanks-paragraph{
+    text-align: center;
+    font-size: 1.5em;
+  }
+}
+
+.home{
+    font-size: 1.5em;
+    text-transform: uppercase;
+    padding: 0.8em;
+    background-color: black;
+    color: #ffffff;
+    box-shadow: none;
+}
+
+
+                                      /* footer part */
+
+.img-3{
+    padding: 1em ;
+    margin-left: 1.5em;
+    width: 97%;
+}
+
+.footer-text{
+    height: 8vh;
+    background-color: black;
+    color: white;
+    margin-top: 1em;
+    text-align: center;
+    text-transform: capitalize;
+    font-style: italic;
+    font-size: 1.5em;
+    padding: 1em;
+}
+
+.footer-link{
+    color: white;
+}
